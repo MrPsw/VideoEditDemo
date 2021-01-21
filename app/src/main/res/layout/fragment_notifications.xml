@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.notifications.NotificationsFragment">
+
+    <TextView
+        android:id="@+id/text_notifications"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.oaks.golf.ui.opengl.OpenGLView
+            android:id="@+id/glView"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:visibility="visible" />
+
+        <com.oaks.golf.ui.widget.graffiti.DrawingBoardView
+            android:id="@+id/drawing_board"
+            android:layout_width="300dp"
+            android:layout_height="300dp" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_curve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="曲线" />
+
+        <Button
+            android:id="@+id/btn_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="直线" />
+
+        <Button
+            android:id="@+id/btn_round"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="圆" />
+
+        <Button
+            android:id="@+id/btn_angle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="角度" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_square"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="正方形" />
+
+
+        <Button
+            android:id="@+id/btn_retreat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="撤退" />
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/image_h"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
+
+    <Button
+        android:id="@+id/btn_play"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放" />
+
+    <Button
+        android:id="@+id/btn_turn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="翻转" />
+
+    <SurfaceView
+        android:id="@+id/mSurfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

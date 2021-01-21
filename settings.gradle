@@ -1,0 +1,4 @@
+include ':ffmpeg'
+include ':ffmpeg1'
+include ':app'
+rootProject.name = "golf"
