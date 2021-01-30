@@ -95,6 +95,18 @@
                 android:text="替换音频"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/ffmpeg_player"
+                android:text="ffmpeg 播放器"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/ffmpeg_player2"
+                android:text="ffmpeg 播放器"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
 
         <FrameLayout

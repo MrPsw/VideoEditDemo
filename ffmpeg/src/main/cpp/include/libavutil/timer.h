@@ -26,7 +26,7 @@
 #ifndef AVUTIL_TIMER_H
 #define AVUTIL_TIMER_H
 
-#include "../../config.h"
+#include "../../ffmpeg_cmd/config.h"
 
 #if CONFIG_LINUX_PERF
 # ifndef _GNU_SOURCE

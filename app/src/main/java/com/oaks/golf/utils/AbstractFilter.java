@@ -8,7 +8,7 @@ import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
 
-import lyq.com.douyin.utils.OpenGLUtils;
+
 
 /**
  * @author Lance

@@ -22,7 +22,7 @@
 #ifndef AVUTIL_THREAD_H
 #define AVUTIL_THREAD_H
 
-#include "../../config.h"
+#include "../../ffmpeg_cmd/config.h"
 
 #if HAVE_PTHREADS || HAVE_W32THREADS || HAVE_OS2THREADS
 

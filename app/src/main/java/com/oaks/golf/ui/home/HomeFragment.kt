@@ -1,5 +1,6 @@
 package com.oaks.golf.ui.home
 
+import android.content.Intent
 import android.media.MediaFormat
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,6 +14,8 @@ import androidx.lifecycle.ViewModelProvider
 import com.oaks.ffmpeg.FFmpegCmd
 import com.oaks.ffmpeg.FFmpegCmd.OnCmdExecListener
 import com.oaks.ffmpeg.FFmpegUtils
+import com.oaks.golf.FFmpegPlayerActivity
+import com.oaks.golf.PlayerActivity2
 import com.oaks.golf.R
 import com.oaks.golf.ui.decoder.DecoderUtils
 import com.oaks.golf.ui.opengl.BitmapUtils
@@ -84,23 +87,29 @@ class HomeFragment : Fragment() {
         }
 
         replace_audio.setOnClickListener {
-            replaceAudio(inputMp43,audioFile,outMp43)
+            replaceAudio(inputMp43, audioFile, outMp43)
         }
 
+        ffmpeg_player.setOnClickListener {
+            startActivity(Intent(activity, FFmpegPlayerActivity::class.java))
+        }
+        ffmpeg_player2.setOnClickListener {
+            startActivity(Intent(activity, PlayerActivity2::class.java))
+        }
 
 
     }
 
     private fun addWaterMark(inputMp4: String, inputJPG: String, outMp4: String) {
         val bgn = System.currentTimeMillis()
-       showLoadDialog()
+        showLoadDialog()
         println("开始时间：$bgn")
         FFmpegUtils.addWaterMark(inputMp4, inputJPG, outMp4, object : OnCmdExecListener {
             override fun onSuccess() {
                 println("结束时间：${System.currentTimeMillis()} 耗时：${(System.currentTimeMillis() - bgn) / 1000}秒")
                 println("ffmpeg 操作成功")
                 println("ffmpeg" + FFmpegUtils.getVideoInfo(outMp4))
-               hideLoadDialog()
+                hideLoadDialog()
             }
 
             override fun onFailure() {

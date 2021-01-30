@@ -2,13 +2,13 @@
 // Created by Admin on 2020/12/10.
 //
 #include "com_oaks_golf_FFmpegUtils.h"
-#include "ffmpeg_thread.h"
-#include "cJSON.h"
+#include "ffmpeg_cmd/ffmpeg_thread.h"
+#include "ffmpeg_cmd/cJSON.h"
 #include <cstdio>
 
 
 extern "C" {
-#include "ffmpeg.h"
+#include "ffmpeg_cmd/ffmpeg.h"
 }
 
 

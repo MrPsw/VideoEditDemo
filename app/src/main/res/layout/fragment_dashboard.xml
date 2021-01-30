@@ -8,9 +8,9 @@
 
     <com.oaks.golf.ui.opengl.CameraPreviewView
         android:id="@+id/mSurfaceView"
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,4 +30,6 @@
             android:text="停止录制" />
 
     </LinearLayout>
+
+
 </FrameLayout>

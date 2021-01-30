@@ -1,4 +1,6 @@
 #include <android/log.h>
+#include "include/libavutil/log.h"
+
 static int use_log_report = 0;
 
 
@@ -38,8 +40,7 @@ static int use_log_report = 0;
 
 
 /*belown printf info*/
-static void ffp_log_callback_brief(void *ptr, int level, const char *fmt, va_list vl)
-{
+static void ffp_log_callback_brief(void *ptr, int level, const char *fmt, va_list vl) {
     int ffplv = FF_LOG_VERBOSE;
     if (level <= AV_LOG_ERROR)
         ffplv = FF_LOG_ERROR;
@@ -58,8 +59,7 @@ static void ffp_log_callback_brief(void *ptr, int level, const char *fmt, va_lis
 }
 
 
-static void ffp_log_callback_report(void *ptr, int level, const char *fmt, va_list vl)
-{
+static void ffp_log_callback_report(void *ptr, int level, const char *fmt, va_list vl) {
     int ffplv = FF_LOG_VERBOSE;
     if (level <= AV_LOG_ERROR)
         ffplv = FF_LOG_ERROR;

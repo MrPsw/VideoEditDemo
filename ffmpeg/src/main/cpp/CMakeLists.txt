@@ -17,6 +17,8 @@ file(GLOB src-files
         ${CMAKE_SOURCE_DIR}/*.cpp
         ${CMAKE_SOURCE_DIR}/*.c
         ${CMAKE_SOURCE_DIR}/include/*.c
+        ${CMAKE_SOURCE_DIR}/ffmpeg_cmd/*.c
+        ${CMAKE_SOURCE_DIR}/ffmpeg_cmd/*.cpp
         )
 
 add_library( # Sets the name of the library.

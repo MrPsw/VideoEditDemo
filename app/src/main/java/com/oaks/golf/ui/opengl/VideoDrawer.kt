@@ -3,6 +3,7 @@ package com.oaks.golf.ui.opengl
 import android.graphics.SurfaceTexture
 import android.opengl.GLES11Ext
 import android.opengl.GLES20
+import android.opengl.Matrix
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
 import java.nio.FloatBuffer
@@ -196,7 +197,8 @@ class VideoDrawer : IDrawer {
         GLES20.glEnableVertexAttribArray(mTexturePosHandler)
 
         //将变换矩阵传递给顶点着色器
-        mMatrix = OpenGLUtils.getMatrix(mVideo_Width, mVideo_Height, mGl_Width, mGl_Height)
+//        mMatrix = OpenGLUtils.getMatrix(mVideo_Width, mVideo_Height, mGl_Width, mGl_Height)
+        mMatrix = redress(mVideo_Width.toFloat(), mVideo_Height.toFloat())
         if (mMatrix != null) {
             GLES20.glUniformMatrix4fv(mVertexMatrixHandler, 1, false, mMatrix, 0)
         }
@@ -281,6 +283,25 @@ class VideoDrawer : IDrawer {
 
     fun getSurfaceTexture(): SurfaceTexture? {
         return mSurfaceTexture
+    }
+
+
+    fun redress(width: Float, height: Float): FloatArray {
+
+        var projectionMatrix = FloatArray(16)
+
+        val aspectRatio = if (width > height) {
+            width  / height
+        } else {
+            height  / width
+        }
+
+        if (width > height) {
+            Matrix.orthoM(projectionMatrix, 0, -aspectRatio, aspectRatio, -1f, 1f, -1f, 1f)
+        } else {
+            Matrix.orthoM(projectionMatrix, 0, -1f, 1f, -aspectRatio, aspectRatio, -1f, 1f)
+        }
+        return projectionMatrix
     }
 
 }

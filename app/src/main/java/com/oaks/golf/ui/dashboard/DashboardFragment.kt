@@ -10,9 +10,9 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.oaks.ffmpeg.MediaPlayer
 import com.oaks.golf.R
 import com.oaks.golf.ui.recorder.CodecUtil
-import com.oaks.golf.utils.MediaRecorder
 import com.oaks.golf.utils.RecordVideoHelper
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 
@@ -38,28 +38,33 @@ class DashboardFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        mSurfaceView.holder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS)
-        mSurfaceView.keepScreenOn = true
+//        mSurfaceView.holder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS)
+//        mSurfaceView.keepScreenOn = true
+//
+//        var codecUtil: CodecUtil? = null
+//        codecUtil = CodecUtil(requireActivity(), 300, 300) {
+//
+//        }
+//        mSurfaceView.getRenderer()?.let { cameraRenderer ->
+//            cameraRenderer.addSurfaceCreated {
+//                mRecordHelper.previewCamera(it)
+//            }
+//        }
+//
+//
+//
+//        start_record?.setOnClickListener {
+//            mRecordHelper?.startRecord("/storage/emulated/0/test1/录制的视频.mp4")
+//            codecUtil.start()
+//        }
+//        stop_record?.setOnClickListener {
+//            mRecordHelper?.stopRecord()
+//            codecUtil.stop()
+//        }
+//
 
-        var codecUtil: CodecUtil? = null
-        codecUtil = CodecUtil(requireActivity(), 300, 300) {
-
-        }
-        mSurfaceView.getRenderer()?.let { cameraRenderer ->
-            cameraRenderer.addSurfaceCreated {
-                mRecordHelper.previewCamera(it)
-            }
-        }
 
 
-        start_record?.setOnClickListener {
-            mRecordHelper?.startRecord("/storage/emulated/0/test1/录制的视频.mp4")
-            codecUtil.start()
-        }
-        stop_record?.setOnClickListener {
-            mRecordHelper?.stopRecord()
-            codecUtil.stop()
-        }
     }
 
     private fun showToast(str: String) {

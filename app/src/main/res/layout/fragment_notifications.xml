@@ -27,13 +27,13 @@
 
         <com.oaks.golf.ui.opengl.OpenGLView
             android:id="@+id/glView"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="300dp"
             android:visibility="visible" />
 
         <com.oaks.golf.ui.widget.graffiti.DrawingBoardView
             android:id="@+id/drawing_board"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="300dp" />
     </FrameLayout>
 
@@ -87,6 +87,18 @@
             android:text="撤退" />
 
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.oaks.golf.ui.widget.VideoCropSeekBar
+            android:background="#000000"
+            android:id="@+id/view_crop_seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
+    </FrameLayout>
+
 
     <HorizontalScrollView
         android:layout_width="match_parent"
